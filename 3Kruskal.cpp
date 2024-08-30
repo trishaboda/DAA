@@ -3,16 +3,14 @@
 #include <cmath>
 using namespace std;
 
-class graph
-{
+class graph{
 public:
     int **cost;
     int *visited;
     int mincost = 0;
     int n;
 
-    void initialize()
-    {
+    void initialize(){
         cout << "Enter the number of nodes: ";
         cin >> n;
 
@@ -26,54 +24,42 @@ public:
         }
 
         cout << "Enter adjacency matrix:\n";
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
                 cin >> cost[i][j];
-                if (cost[i][j] == 0 && i != j) 
-                {
+                if (cost[i][j] == 0 && i != j) {
                     cost[i][j] = numeric_limits<int>::max();
                 }
             }
         }
     }
 
-    int find(int i)
-    {
+    int find(int i){
         while (visited[i] != i)
             i = visited[i];
         return i;
     }
 
-    void union_ij(int i, int j)
-    {
-        if (i != j)
-        {
+    void union_ij(int i, int j){
+        if (i != j){
             visited[j] = i;
         }
     }
 
-    void kruskal()
-    {
+    void kruskal(){
         int minweight;
 
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++){
             visited[i] = i;
         }
 
         cout << "Edges of the Minimum Spanning Tree:\n";
-        for (int counter = 0; counter < n - 1; counter++)
-        {
+        for (int counter = 0; counter < n - 1; counter++){
             minweight = 9999;
             int u, v;
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    if (find(i) != find(j) && cost[i][j] < minweight)
-                    {
+            for (int i = 0; i < n; i++){
+                for (int j = 0; j < n; j++){
+                    if (find(i) != find(j) && cost[i][j] < minweight){
                         minweight = cost[i][j];
                         u = i;
                         v = j;
