@@ -92,8 +92,7 @@ int removeDuplicates(int arr[], int n)
     return j;
 }
 
-int main()
-{
+int main(){
     int n, i;
     cout << "Enter the number of elements: ";
     cin >> n;
@@ -101,14 +100,12 @@ int main()
     srand(time(0));
 
     int* a = new int[n];
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         a[i] = rand() % 1000;  
     }
 
     cout << "\nUnsorted Array: ";
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         cout << a[i] << " ";
     }
 
@@ -118,19 +115,15 @@ int main()
     double time_taken = ((double)(end - start)) / CLOCKS_PER_SEC;
 
     cout << "\nSorted Array: ";
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         cout << a[i] << " ";
     }
 
     n = removeDuplicates(a, n);
-
     cout << "\n\nTime taken for merge sort: " << time_taken << " seconds\n";
-
     cout << "\nArray after removing duplicates: ";
 
-    for (i = 0; i < n; i++)
-    {
+    for (i = 0; i < n; i++){
         cout << a[i] << " ";
     }
 
