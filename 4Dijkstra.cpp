@@ -22,7 +22,6 @@ void printSolution(const vector<int>& dist, const vector<string>& vertices, int 
         cout << vertices[i] << " \t\t " << dist[i] << endl;
 }
 
-// Function to print the sptSet
 void printSPTSet(const vector<bool>& sptSet, const vector<string>& vertices, int V) {
     cout << "sptSet: ";
     for (int i = 0; i < V; i++)
