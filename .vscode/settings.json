@@ -4,7 +4,10 @@
     "utility": "cpp",
     "ostream": "cpp",
     "limits": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "6floyd_warshall": "c",
+    "array": "cpp",
+    "initializer_list": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp_Runner.cCompilerPath": "gcc",
